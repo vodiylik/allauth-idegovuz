@@ -26,8 +26,7 @@ class IdEgovUzProvider(OAuth2Provider):
         return user_id.lower()
 
     def extract_common_fields(self, data):
-        return dict(middle_name=data.get('mid_name'),
-                    first_name=data['first_name'],
+        return dict(first_name=data['first_name'],
                     last_name=data['sur_name'],
                     email=data.get('email'),
                     username=self.extract_uid(data))
@@ -38,8 +37,6 @@ class IdEgovUzProvider(OAuth2Provider):
         return ret
 
     def get_default_scope(self):
-        if not self.scope:
-            raise Exception("Scope for id.egov.uz provider is not defined!")
         return self.scope
 
     def sociallogin_from_response(self, request, response):

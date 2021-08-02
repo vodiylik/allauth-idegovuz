@@ -2,5 +2,6 @@ __pycache__
 .bak
 .pyc
 .pyo
-dist
-dist/*
+dist/
+build/
+allauth_idegovuz.egg-info/
