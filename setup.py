@@ -8,7 +8,7 @@ setuptools.setup(
     author_email="sh@turgunov.uz",
     description="id.egov.uz provider for django-allauth",
     keywords=['id.egov.uz', 'id', 'allauth', 'provider'],
-    url="https://github.com/vodiylik/allauth-idegovuz.git",
+    url="https://github.com/vodiylik/allauth-idegovuz",
     packages=setuptools.find_packages(),
     install_requires=['django', 'django-allauth'],
     classifiers=[
