@@ -2,7 +2,6 @@ import setuptools
 
 setuptools.setup(
     name='idegovuz',
-    packages=['idegovuz'],
     version='0.1',
     license='MIT',
     author="Shukrullo Turgunov",
