@@ -5,7 +5,8 @@ from allauth.socialaccount.helpers import render_authentication_error, complete_
 from allauth.socialaccount.models import SocialToken, SocialLogin
 from allauth.socialaccount.providers.base import AuthError, ProviderException
 from allauth.socialaccount.providers.oauth2.client import OAuth2Error
-from allauth.socialaccount.providers.oauth2.views import (OAuth2Adapter, OAuth2LoginView, OAuth2View)
+from allauth.socialaccount.providers.oauth2.views import (
+    OAuth2Adapter, OAuth2LoginView, OAuth2View)
 from allauth.utils import get_request_param
 from django.conf import settings
 from django.core.exceptions import PermissionDenied
@@ -46,7 +47,8 @@ class IdEgovUzAdapter(OAuth2Adapter):
         expires_in = data.get(self.expires_in_key, None)
         if expires_in:
             # in response id.egov.uz returns date in long timestamp format instead of expire time in seconds
-            expires_date = timezone.datetime.strptime(time.ctime(expires_in / 1000), "%a %b %d %H:%M:%S %Y")
+            expires_date = timezone.datetime.strptime(
+                time.ctime(expires_in / 1000), "%a %b %d %H:%M:%S %Y")
             token.expires_at = timezone.make_aware(expires_date)
         return token
 
@@ -69,7 +71,8 @@ class OAuth2CallbackView(OAuth2View):
         try:
             print("APP", app)
             print("CLIENT", client)
-            access_token = self.adapter.get_access_token_data(request, app, client)
+            access_token = self.adapter.get_access_token_data(
+                request, app, client)
             token = self.adapter.parse_token(access_token)
             token.app = app
             login = self.adapter.complete_login(
