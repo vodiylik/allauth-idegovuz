@@ -65,8 +65,7 @@ class OAuth2Client(object):
         resp = requests.request(
             self.access_token_method,
             url,
-            params=params,
-            data=data,
+            data=params,
             headers=self.headers,
             auth=auth)
 
