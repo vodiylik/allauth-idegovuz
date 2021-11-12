@@ -4,8 +4,7 @@ from allauth.socialaccount.helpers import render_authentication_error, complete_
 
 from allauth.socialaccount.models import SocialToken, SocialLogin
 from allauth.socialaccount.providers.base import AuthError, ProviderException
-from allauth.socialaccount.providers.oauth2.client import (
-    OAuth2Error, OAuth2Client)
+from allauth.socialaccount.providers.oauth2.client import OAuth2Error
 from allauth.socialaccount.providers.oauth2.views import (
     OAuth2Adapter, OAuth2LoginView, OAuth2View)
 from allauth.utils import get_request_param
@@ -16,6 +15,7 @@ from requests import RequestException
 
 from .constants import *
 from .provider import IdEgovUzProvider
+from .client import OAuth2Client
 
 
 class IdEgovUzAdapter(OAuth2Adapter):
