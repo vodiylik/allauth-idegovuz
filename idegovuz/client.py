@@ -62,12 +62,10 @@ class OAuth2Client(object):
         if self.access_token_method == 'GET':
             params = data
             data = None
-        resp = requests.request(
-            self.access_token_method,
-            url,
-            data=params,
-            headers=self.headers,
-            auth=auth)
+            
+        resp = requests.post(
+            url, 
+            data = data)
 
         access_token = None
         if resp.status_code in [200, 201]:
