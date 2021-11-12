@@ -15,10 +15,12 @@ from requests import RequestException
 
 from .constants import *
 from .provider import IdEgovUzProvider
+from .client import OAuth2Client
 
 
 class IdEgovUzAdapter(OAuth2Adapter):
     provider_id = IdEgovUzProvider.id
+    client_class = OAuth2Client
     base_url = BASE_URL
     authorize_url = AUTHORIZE_URL
     access_token_url = ACCESS_TOKEN_URL
